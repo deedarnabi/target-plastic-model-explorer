@@ -12,6 +12,7 @@ All notable changes to this project are documented here.
 ### Documentation
 
 - Added the Zenodo concept DOI badge and exact v1.2.0 release DOI to citation metadata.
+- Added the live Streamlit dashboard URL to the README and citation metadata.
 
 ## [1.2.0] - 2026-08-13
 

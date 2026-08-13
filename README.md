@@ -4,7 +4,10 @@ An auditable Streamlit dashboard for the Target Plastic Model (TPM) described by
 
 Repository: [deedarnabi/target-plastic-model-explorer](https://github.com/deedarnabi/target-plastic-model-explorer)
 
+Live dashboard: [target-plastic-model-explorer.streamlit.app](https://target-plastic-model-explorer.streamlit.app/)
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21923164.svg)](https://doi.org/10.5281/zenodo.21923164)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://target-plastic-model-explorer.streamlit.app/)
 
 > Research-use model. This app is not a regulatory decision system and does not replace toxic-mode assignment, ionization assessment, equilibrium assessment, or review of the underlying studies.
 

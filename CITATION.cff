@@ -12,6 +12,7 @@ authors:
 license: MIT
 repository-code: "https://github.com/deedarnabi/target-plastic-model-explorer"
 repository-artifact: "https://github.com/deedarnabi/target-plastic-model-explorer/releases/tag/v1.2.0"
+url: "https://target-plastic-model-explorer.streamlit.app/"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21923165"

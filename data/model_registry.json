@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.1.0",
+  "model": {
+    "name": "Target Plastic Model",
+    "abbreviation": "TPM",
+    "version": "1.2.0",
+    "doi": "10.1021/acs.jcim.4c00574",
+    "recommended_estimator": "median critical burden"
+  },
+  "modes": {
+    "baseline": {
+      "label": "Baseline toxicants",
+      "calculator_status": "supported",
+      "interpretation": "Validated for chemicals acting predominantly through baseline narcosis."
+    },
+    "less_inert": {
+      "label": "Less-inert toxicants",
+      "calculator_status": "supported_with_caution",
+      "interpretation": "Use only when the less-inert mode assignment is scientifically justified; uncertainty is larger and mode classification is decisive."
+    },
+    "reactive": {
+      "label": "Reactive toxicants",
+      "calculator_status": "not_supported",
+      "interpretation": "Evidence-review only. A phase-partitioning critical-burden model is not an adequate predictor for specifically reactive toxicity."
+    }
+  },
+  "phases": {
+    "phospholipid": {
+      "label": "Phospholipid",
+      "evidence_tier": "reference",
+      "validated": false,
+      "description": "Biological membrane reference phase."
+    },
+    "octanol": {
+      "label": "Octanol",
+      "evidence_tier": "reference",
+      "validated": false,
+      "description": "Conventional hydrophobicity reference phase."
+    },
+    "PDMS": {
+      "label": "PDMS",
+      "evidence_tier": "paper_validated",
+      "validated": true,
+      "description": "Polydimethylsiloxane."
+    },
+    "PA": {
+      "label": "PA",
+      "evidence_tier": "paper_validated",
+      "validated": true,
+      "description": "Polyacrylate."
+    },
+    "POM": {
+      "label": "POM",
+      "evidence_tier": "paper_validated",
+      "validated": true,
+      "description": "Polyoxymethylene."
+    },
+    "PE": {
+      "label": "PE / LDPE",
+      "evidence_tier": "paper_validated",
+      "validated": true,
+      "description": "Polyethylene; the source data primarily represent low-density polyethylene."
+    },
+    "PU": {
+      "label": "PU",
+      "evidence_tier": "paper_validated",
+      "validated": true,
+      "description": "Polyurethane."
+    }
+  },
+  "abraham_coefficients": {
+    "PDMS": {"intercept": 0.268, "e": 0.601, "s": -1.416, "a": -2.523, "b": -4.107, "v": 3.637, "l": 0.0},
+    "PA": {"intercept": -0.120, "e": 0.500, "s": -0.160, "a": 0.160, "b": -4.000, "v": 3.280, "l": 0.0},
+    "POM": {"intercept": -0.370, "e": 0.390, "s": 0.280, "a": -0.460, "b": -3.980, "v": 2.980, "l": 0.0},
+    "PE": {"intercept": 0.000, "e": 1.002, "s": -1.296, "a": -1.820, "b": -4.037, "v": 3.399, "l": 0.0},
+    "PU": {"intercept": -2.430, "e": 0.000, "s": -0.440, "a": -0.280, "b": -4.870, "v": 2.820, "l": 0.230}
+  },
+  "partition_model_provenance": {
+    "PDMS": {
+      "method": "Abraham solvation model",
+      "source": "Sprunger et al., J. Chromatogr. A 2007, 1175, 162-173",
+      "temperature": "25 °C",
+      "training_n": null,
+      "r_squared": null,
+      "standard_error": null,
+      "notes": "Archived equation record; not intended for siloxanes or highly fluorinated compounds. Kinetic suitability requires separate judgment."
+    },
+    "PA": {
+      "method": "Abraham solvation model",
+      "source": "Endo, Droge & Goss, Anal. Chem. 2011, 83, 1394-1400",
+      "temperature": "20-25 °C",
+      "training_n": 79,
+      "r_squared": 0.97,
+      "standard_error": 0.23,
+      "notes": "Literature-data equation used by the paper; not intended for siloxanes or highly fluorinated compounds."
+    },
+    "POM": {
+      "method": "Abraham solvation model",
+      "source": "Endo et al., Environ. Sci. Technol. 2011, 45, 10124-10132",
+      "temperature": "25 °C",
+      "training_n": 116,
+      "r_squared": 0.99,
+      "standard_error": 0.24,
+      "notes": "Literature-data equation used by the paper; not intended for siloxanes or highly fluorinated compounds."
+    },
+    "PE": {
+      "method": "Abraham solvation model / published PE-water LFER",
+      "source": "Khawar & Nabi, ACS Omega 2021",
+      "temperature": "See source",
+      "training_n": null,
+      "r_squared": null,
+      "standard_error": null,
+      "notes": "The normalized dashboard preserves the equation used in the supporting workbook; consult the cited source before extrapolation."
+    },
+    "PU": {
+      "method": "Thermodynamic cycle from PU-air and air-water ASM equations",
+      "source": "Target Plastic Model supporting information",
+      "temperature": "Source dependent",
+      "training_n": null,
+      "r_squared": null,
+      "standard_error": null,
+      "notes": "PU-water was not available as a direct ASM equation; the paper used a thermodynamic cycle."
+    }
+  },
+  "log_kow_lfer": {
+    "PDMS": {
+      "label": "TPM-SI-derived PDMS-water screening LFER",
+      "intercept": -1.356085323,
+      "slope": 1.109241887,
+      "training_n": 448,
+      "r_squared": 0.813906,
+      "rmse_log_unit": 0.775734,
+      "log_kow_min": -1.75,
+      "log_kow_max": 6.5,
+      "status": "dashboard_derived_screening",
+      "source": "Regression fitted by the dashboard to paired EPI Suite logKow and ASM-predicted PDMS-water logK values in the TPM nonreactive supporting-data cohorts.",
+      "notes": "This is a transparent one-parameter fallback, not a published TPM equation. Prefer measured K or the paper's Abraham solvation model."
+    },
+    "PA": {
+      "label": "TPM-SI-derived PA-water screening LFER",
+      "intercept": -0.162549323,
+      "slope": 0.939935377,
+      "training_n": 448,
+      "r_squared": 0.919378,
+      "rmse_log_unit": 0.407086,
+      "log_kow_min": -1.75,
+      "log_kow_max": 6.5,
+      "status": "dashboard_derived_screening",
+      "source": "Regression fitted by the dashboard to paired EPI Suite logKow and ASM-predicted PA-water logK values in the TPM nonreactive supporting-data cohorts.",
+      "notes": "This is a transparent one-parameter fallback, not a published TPM equation. Prefer measured K or the paper's Abraham solvation model."
+    },
+    "POM": {
+      "label": "TPM-SI-derived POM-water screening LFER",
+      "intercept": -0.455736028,
+      "slope": 0.889375526,
+      "training_n": 448,
+      "r_squared": 0.875573,
+      "rmse_log_unit": 0.490347,
+      "log_kow_min": -1.75,
+      "log_kow_max": 6.5,
+      "status": "dashboard_derived_screening",
+      "source": "Regression fitted by the dashboard to paired EPI Suite logKow and ASM-predicted POM-water logK values in the TPM nonreactive supporting-data cohorts.",
+      "notes": "This is a transparent one-parameter fallback, not a published TPM equation. Prefer measured K or the paper's Abraham solvation model."
+    },
+    "PE": {
+      "label": "Published PE-water logKow LFER (Eq. 14)",
+      "intercept": -0.696,
+      "slope": 1.059,
+      "training_n": 214,
+      "r_squared_min": 0.892,
+      "r_squared_max": 0.896,
+      "rmse_log_unit_min": 0.4,
+      "rmse_log_unit_max": 0.42,
+      "log_kow_min": 2.7,
+      "log_kow_max": 8.6,
+      "status": "published_screening",
+      "doi": "10.1021/acsomega.0c05179",
+      "source": "Khawar & Nabi, ACS Omega 2021, Eq. 14: log KPE-water = -0.696 + 1.059 logKow.",
+      "notes": "Published for simple neutral organics. The source found the Abraham/polyparameter model more accurate, so use this as a screening fallback when descriptors or measured K are unavailable."
+    },
+    "PU": {
+      "label": "TPM-SI-derived PU-water screening LFER",
+      "intercept": -3.232159177,
+      "slope": 1.062411819,
+      "training_n": 448,
+      "r_squared": 0.918623,
+      "rmse_log_unit": 0.462471,
+      "log_kow_min": -1.75,
+      "log_kow_max": 6.5,
+      "status": "dashboard_derived_screening",
+      "source": "Regression fitted by the dashboard to paired EPI Suite logKow and ASM/thermodynamic-cycle PU-water logK values in the TPM nonreactive supporting-data cohorts.",
+      "notes": "This is a transparent one-parameter fallback, not a published TPM equation. Prefer measured K or the paper's Abraham solvation workflow."
+    }
+  },
+  "polymer_guidance": {
+    "PDMS": {
+      "passive_sampling": "Established absorptive sampler material with broad use for neutral hydrophobic organics.",
+      "passive_dosing": "Commonly used as a controllable donor phase.",
+      "practical_note": "Validation error is higher than PA and POM in the full baseline validation cohort."
+    },
+    "PA": {
+      "passive_sampling": "Strong enrichment can support trace analysis when the chemical-specific partition coefficient is favorable.",
+      "passive_dosing": "Usable as an absorptive phase when loading and partition data are available.",
+      "practical_note": "One of the two strongest TPM phases for baseline fish-LC50 prediction."
+    },
+    "POM": {
+      "passive_sampling": "Well-characterized equilibrium partition phase for many neutral organics.",
+      "passive_dosing": "Can be used when slower material diffusion is addressed experimentally.",
+      "practical_note": "One of the two strongest TPM phases for baseline fish-LC50 prediction."
+    },
+    "PE": {
+      "passive_sampling": "Widely used for field sampling of hydrophobic organic contaminants.",
+      "passive_dosing": "Applicable when donor loading and exposure maintenance are verified.",
+      "practical_note": "The paper data primarily represent LDPE; do not silently transfer performance to every PE grade."
+    },
+    "PU": {
+      "passive_sampling": "Potentially useful for chemicals with broader intermolecular interactions.",
+      "passive_dosing": "Requires careful material-specific partition characterization.",
+      "practical_note": "PU-water partition values were obtained through a thermodynamic cycle and carry added model dependence."
+    }
+  },
+  "scientific_limits": [
+    "The TPM predicts acute fish LC50 from equilibrium plastic-water partitioning and a mode-specific median critical burden.",
+    "Predictions require a neutral organic chemical, a defensible toxic mode, and an equilibrium phase-partition coefficient.",
+    "Ionizable chemicals, mixtures without equilibrium, polymers outside the validated set, and specifically reactive chemicals require separate evaluation.",
+    "Other-plastic results from Table S6 are exploratory and are not enabled in the calculator."
+  ]
+}

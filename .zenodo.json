@@ -1,0 +1,38 @@
+{
+  "title": "Target Plastic Model Explorer",
+  "description": "An auditable Streamlit implementation of the Target Plastic Model. Its primary workflow converts measured plastic-associated concentrations to toxic units, mixture toxic units, plastic-phase PNEC equivalents, and risk quotients without requiring chemical-specific LC50 or plastic-water partition coefficients. It also provides source-aware acute fish evidence, validation diagnostics, critical-burden exploration, polymer selection, and passive-dosing design.",
+  "upload_type": "software",
+  "publication_date": "2026-08-13",
+  "version": "1.2.0",
+  "creators": [
+    {
+      "name": "Nabi, Deedar",
+      "orcid": "0000-0002-0188-0404",
+      "affiliation": "Institute of Environmental Sciences and Engineering, National University of Sciences and Technology"
+    }
+  ],
+  "keywords": [
+    "aquatic toxicity",
+    "plastic-water partitioning",
+    "target plastic model",
+    "critical burden",
+    "Streamlit"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1021/acs.jcim.4c00574",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://github.com/deedarnabi/target-plastic-model-explorer",
+      "relation": "isIdenticalTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "access_right": "open",
+  "license": "mit",
+  "notes": "The MIT license applies to original source code. Normalized scientific tables retain attribution to the article supporting information; see NOTICE and DATA_PROVENANCE.md."
+}

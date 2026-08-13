@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "source": {
+    "file": "ci4c00574_si_002.xlsx",
+    "sha256": "c6a7637d78cc92b5e043e296f3f59a023743168cd8a02375419455312faf4e2b",
+    "doi": "10.1021/acs.jcim.4c00574",
+    "citation": "Nabi, D.; Beck, A. J.; Achterberg, E. P. Assessing Aquatic Baseline Toxicity of Plastic-Associated Chemicals: Development and Validation of the Target Plastic Model. J. Chem. Inf. Model. 2024, 64, 6492-6505."
+  },
+  "datasets": {
+    "baseline_evaluation": {
+      "rows": 115,
+      "source_sheet": "Table_S1-Baseline_Evaluation"
+    },
+    "baseline_validation": {
+      "rows": 132,
+      "source_sheet": "Table_S2-Baseline_Validation"
+    },
+    "less_inert_evaluation": {
+      "rows": 73,
+      "source_sheet": "Table_S3-Less_Inert_Evaluation"
+    },
+    "less_inert_validation": {
+      "rows": 128,
+      "source_sheet": "Table_S4-Less_Inert_Validation"
+    },
+    "reactive_evaluation": {
+      "rows": 75,
+      "source_sheet": "Table_S5-Reactive_Toxicants"
+    }
+  },
+  "other_plastics": {
+    "HDPE": 10,
+    "Polypropylene": 9,
+    "Polystyrene": 8,
+    "Polyvinyl Chloride": 29,
+    "UHMWPE": 3
+  },
+  "transformation": "Values were extracted from cached Open XML cell values. Styled empty cells, charts, and workbook presentation formatting were excluded. Source rows were not altered. Derived critical burdens use Ccrit(mol/kg)=10^(-median[-log10 Ccrit]).",
+  "unit_note": "The workbook stores reactive critical burdens as -log10(mol/kg). The app converts mol/kg to mmol/kg by multiplying by 1000. This yields 0.001001 to 0.678054 mmol/kg for the five reactive plastic phases; these calculations remain out of domain."
+}

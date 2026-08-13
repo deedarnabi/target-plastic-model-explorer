@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, cite both this software release and the Target Plastic Model paper."
+title: "Target Plastic Model Explorer"
+type: software
+version: 1.2.0
+date-released: 2026-08-13
+authors:
+  - family-names: Nabi
+    given-names: Deedar
+    orcid: "https://orcid.org/0000-0002-0188-0404"
+    affiliation: "Institute of Environmental Sciences and Engineering, National University of Sciences and Technology"
+license: MIT
+repository-code: "https://github.com/deedarnabi/target-plastic-model-explorer"
+keywords:
+  - aquatic toxicity
+  - plastic-water partitioning
+  - target plastic model
+  - critical burden
+  - Streamlit
+references:
+  - type: article
+    title: "Assessing Aquatic Baseline Toxicity of Plastic-Associated Chemicals: Development and Validation of the Target Plastic Model"
+    authors:
+      - family-names: Nabi
+        given-names: Deedar
+        orcid: "https://orcid.org/0000-0002-0188-0404"
+      - family-names: Beck
+        given-names: Aaron J.
+        orcid: "https://orcid.org/0000-0001-9669-0138"
+      - family-names: Achterberg
+        given-names: Eric P.
+        orcid: "https://orcid.org/0000-0002-3061-2767"
+    year: 2024
+    journal: "Journal of Chemical Information and Modeling"
+    volume: 64
+    start: 6492
+    end: 6505
+    doi: 10.1021/acs.jcim.4c00574

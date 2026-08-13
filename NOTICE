@@ -1,0 +1,28 @@
+Target Plastic Model Explorer
+Copyright (c) 2026 Deedar Nabi
+
+The software source code in this repository is provided under the MIT License.
+
+The normalized scientific tables in data/ are derived from supporting information
+associated with:
+
+  Nabi, D.; Beck, A. J.; Achterberg, E. P. Assessing Aquatic Baseline
+  Toxicity of Plastic-Associated Chemicals: Development and Validation of the
+  Target Plastic Model. Journal of Chemical Information and Modeling 2024,
+  64, 6492-6505. https://doi.org/10.1021/acs.jcim.4c00574
+
+The MIT License applies only to original software code and does not relicense the
+article, its supporting information, or third-party records cited within them.
+Users redistributing the normalized tables must retain attribution and confirm
+that their intended use is consistent with the applicable source terms.
+
+The concept image and the source figures in assets/ reproduce or adapt visual
+material from the article above. The article is licensed under Creative Commons
+Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+Changes include layout, labels, and assembly for the dashboard. Retain the article
+citation and this notice when redistributing those visual assets.
+
+EPA CompTox, WebTEST, and ECOTOX are external U.S. EPA resources. Their presence
+does not imply EPA endorsement. External data remain subject to their source
+context and disclaimers.

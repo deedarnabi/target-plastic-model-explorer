@@ -11,6 +11,11 @@ authors:
     affiliation: "Institute of Environmental Sciences and Engineering, National University of Sciences and Technology"
 license: MIT
 repository-code: "https://github.com/deedarnabi/target-plastic-model-explorer"
+repository-artifact: "https://github.com/deedarnabi/target-plastic-model-explorer/releases/tag/v1.2.0"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21923165"
+    description: "Archived software release v1.2.0"
 keywords:
   - aquatic toxicity
   - plastic-water partitioning

@@ -9,6 +9,10 @@ All notable changes to this project are documented here.
 - Made release-data hashes invariant to Windows and Linux text line endings.
 - Added explicit cross-platform line-ending rules for source, data, and launcher files.
 
+### Documentation
+
+- Added the Zenodo concept DOI badge and exact v1.2.0 release DOI to citation metadata.
+
 ## [1.2.0] - 2026-08-13
 
 ### Added

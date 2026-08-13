@@ -4,6 +4,8 @@ An auditable Streamlit dashboard for the Target Plastic Model (TPM) described by
 
 Repository: [deedarnabi/target-plastic-model-explorer](https://github.com/deedarnabi/target-plastic-model-explorer)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21923164.svg)](https://doi.org/10.5281/zenodo.21923164)
+
 > Research-use model. This app is not a regulatory decision system and does not replace toxic-mode assignment, ionization assessment, equilibrium assessment, or review of the underlying studies.
 
 ## Primary calculation
@@ -78,11 +80,9 @@ See [SCIENTIFIC_VALIDATION.md](SCIENTIFIC_VALIDATION.md) for equation-level acce
 
 ## Deploy and archive
 
-1. Create the GitHub repository and push a clean `main` branch.
-2. Deploy `app.py` on Streamlit Community Cloud and add `COMPTOX_API_KEY` only in the platform's secret settings.
-3. Enable the repository in Zenodo's GitHub integration.
-4. Create the GitHub release `v1.2.0`; review the Zenodo metadata and archive contents before publishing.
-5. Add the minted concept/version DOI to the repository metadata in a follow-up release. No DOI is invented in this repository.
+Release `v1.2.0` is archived at [10.5281/zenodo.21923165](https://doi.org/10.5281/zenodo.21923165). Cite the evolving software project with the all-versions concept DOI [10.5281/zenodo.21923164](https://doi.org/10.5281/zenodo.21923164).
+
+For hosted use, deploy `app.py` from the public repository and add `COMPTOX_API_KEY` only in the hosting platform's secrets manager. The dashboard remains usable without an API key, but live CompTox retrieval is then unavailable.
 
 ## Licensing
 

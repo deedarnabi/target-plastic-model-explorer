@@ -14,16 +14,19 @@ ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_VERSION = "1.2.0"
 EXPECTED_SI_SHA256 = "c6a7637d78cc92b5e043e296f3f59a023743168cd8a02375419455312faf4e2b"
 EXPECTED_DATA_HASHES = {
-    "critical_burdens.csv": "a7fdd9c8f0815c1d11daadcc206df3334291d8bbd03df7aaaf95146929875a6c",
-    "dataset_manifest.json": "7539094455ac866f564c8dc51607b758f89eff342e19132063694551e2539eba",
+    "critical_burdens.csv": "ca4e891b6441a3054ad3aa646184df04bbae52d454c80e5a76504a3d39a1fab1",
+    "dataset_manifest.json": "7f0cdba6eeb5bbd5adee6c2c5a9bb5e96b3a278db0448ae256e5a60fa057e43a",
     "model_registry.json": "5aad9e4058225a52f3261a3a07dc6642ed5886371051f1f7d8ad58f02bd70fc8",
-    "other_plastics.csv": "23050e74c8b51a34552a6760c66a1c8addb8ba4b33e8891cb2a849823b2cde65",
-    "validation_records.csv": "50bb66a94c93dc99385aef3e65a3951f0971d0165408c237d1214bee1451862e",
+    "other_plastics.csv": "cff1bca46416734738678b2fcb9d63f83d16248dd72293f4dd5ac58b6cbae711",
+    "validation_records.csv": "2855740b5457ad67a7f2b393cf64ef2a7691e3f48dbb656cd2aefe98ec75a067",
 }
 
 
-def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def sha256(path: Path, *, canonical_text: bool = False) -> str:
+    content = path.read_bytes()
+    if canonical_text:
+        content = content.replace(b"\r\n", b"\n")
+    return hashlib.sha256(content).hexdigest()
 
 
 def read_csv(name: str) -> list[dict[str, str]]:
@@ -40,7 +43,10 @@ def main() -> int:
         (passed if condition else failures).append(label)
 
     for name, expected in EXPECTED_DATA_HASHES.items():
-        check(sha256(ROOT / "data" / name) == expected, f"release hash: data/{name}")
+        check(
+            sha256(ROOT / "data" / name, canonical_text=True) == expected,
+            f"release hash: data/{name}",
+        )
 
     manifest = json.loads((ROOT / "data" / "dataset_manifest.json").read_text(encoding="utf-8"))
     registry = json.loads((ROOT / "data" / "model_registry.json").read_text(encoding="utf-8"))

@@ -28,7 +28,7 @@
 - [x] Deploy `app.py` from `main` to the public Streamlit URL.
 - [x] Smoke-test the direct assessment and advanced field processor on the deployed URL without an API key.
 - [x] Confirm the app works without an API key and the key remains ignored and absent from the repository.
-- [ ] Add `COMPTOX_API_KEY` only in Streamlit's secrets manager and smoke-test one successful identity/evidence retrieval.
+- [x] Add `COMPTOX_API_KEY` only in Streamlit's secrets manager and smoke-test one successful identity/evidence retrieval.
 - [x] Confirm the repository description, topics, license, and citation display on GitHub.
 - [x] Enable the repository in Zenodo's GitHub integration.
 - [x] Create and review release `v1.2.0`; verify creators, ORCID, paper DOI relation, license note, and archived files before publishing the Zenodo record.
